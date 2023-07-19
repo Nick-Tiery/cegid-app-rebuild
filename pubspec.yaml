@@ -24,7 +24,8 @@ dependencies:
   animate_do: ^3.0.2
   lottie: ^2.4.0
 
-
+# Date Format
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
