@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 # Architecture
   get: ^4.6.5
@@ -19,6 +21,9 @@ dependencies:
 # Cupertino
   cupertino_will_pop_scope: ^1.2.0
   cupertino_icons: ^1.0.2
+
+   # Preferences
+  flutter_secure_storage: ^8.0.0
   
 # Animations
   animate_do: ^3.0.2

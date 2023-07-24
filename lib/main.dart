@@ -3,8 +3,10 @@ import 'dart:async';
 import 'dart:math';
 
 // Flutter
+import 'package:cegid_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX
@@ -54,9 +56,9 @@ class GestionRemotaApp extends StatefulWidget {
 }
 
 
-/****************************** */
-// CONTROLADOR WIDGET PRINCIPAL //
-/****************************** */
+/***************************************** */
+// CONTROLADOR DE ESTADO WIDGET PRINCIPAL //
+/***************************************** */
 class _GestionRemotaAppState extends State<GestionRemotaApp> {
   final Controller _controller = Get.find();
 
@@ -105,12 +107,24 @@ class _GestionRemotaAppState extends State<GestionRemotaApp> {
 
         // GESTIÓN DE RUTAS ENRUTAMIENTO 
         initialRoute: AppRoutes.root,
-        navigatorKey: AppRouteProvider.navigatorKey,
-        onGenerateRoute: widget._appRouteProvider.generateRoute,
+
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        
+        supportedLocales: S.delegate.supportedLocales,
 
         navigatorObservers: [
           HeroController(),
         ],
+        
+        navigatorKey: AppRouteProvider.navigatorKey,
+        onGenerateRoute: widget._appRouteProvider.generateRoute,
+
+      
       )
     );
   }
